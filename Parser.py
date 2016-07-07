@@ -32,7 +32,7 @@ line_break = Suppress(Literal("\\n\\n") | StringEnd())
 paragraph = (
     OneOrMore(text) +
     line_break
-).setParseAction(lambda t: [["paragraph", t.asList()]])
+).setParseAction(lambda t: [["non-quote", t.asList()]])
 
 quote = (
     Suppress(Literal(">")) +
@@ -44,4 +44,16 @@ markdown = OneOrMore(quote | paragraph)
 
 input_string = "Lorem ipsum *dolor* sit\\n\\namet and you know **it**\\n\\n > *the* person said this\\n\\n`"
 
-print(markdown.parseString(input_string))
+# print(markdown.parseString(input_string))
+
+def flatten(l):
+    return [item for sublist in l for item in sublist]
+
+def getText(parsed_input):
+    return " ".join(flatten([[word[1] for word in paragraph[1]] for paragraph in parsed_input]))
+
+parsed = markdown.parseString(input_string)
+print(parsed)
+print(getText(parsed))
+# print('tes')
+
