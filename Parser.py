@@ -1,5 +1,5 @@
-from pyparsing import (Suppress, SkipTo, Literal, OneOrMore, Word,
-                       alphanums, StringEnd)
+from pyparsing import (Suppress, SkipTo, Literal, OneOrMore, Word, ParserElement,
+                       alphanums, StringEnd, printables)
 
 # Ex: *this* is italic
 
@@ -20,14 +20,14 @@ bold_text = (
 # Ex: this is regular
 
 reg_text = (
-    OneOrMore(Word(alphanums))
+    OneOrMore(Word(printables.replace("*","")))
 ).setParseAction(lambda t: [["regular", " ".join(t)]])
 
 text = OneOrMore(bold_text | italic_text | reg_text)
 
 # Note: can be either two newlines or the end of the string
 
-line_break = Suppress(Literal("\\n\\n") | StringEnd())
+line_break = Suppress((Literal("\n\n")) | StringEnd())
 
 paragraph = (
     OneOrMore(text) +
@@ -42,18 +42,10 @@ quote = (
 
 markdown = OneOrMore(quote | paragraph)
 
-input_string = "Lorem ipsum *dolor* sit\\n\\namet and you know **it**\\n\\n > *the* person said this\\n\\n`"
-
-# print(markdown.parseString(input_string))
+ParserElement.setDefaultWhitespaceChars(' \t')
 
 def flatten(l):
     return [item for sublist in l for item in sublist]
 
 def getText(parsed_input):
     return " ".join(flatten([[word[1] for word in paragraph[1]] for paragraph in parsed_input]))
-
-parsed = markdown.parseString(input_string)
-print(parsed)
-print(getText(parsed))
-# print('tes')
-
