@@ -26,7 +26,7 @@ bold_italic_text = (
 # Ex: this is regular
 
 reg_text = (
-    OneOrMore(Word(printables.replace("*","")) | Suppress(Literal("\n")) + Word(printables))
+    OneOrMore(Word(printables) | Suppress(Literal("\n")) + Word(printables))
     # SkipTo(Literal("*")) | SkipTo(Literal("\n\n"))
 ).setParseAction(lambda t: [["regular", " ".join(t)]])
 
