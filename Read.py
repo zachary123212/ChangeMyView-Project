@@ -1,4 +1,5 @@
 import json
+import pprint
 from pyparsing import ParserElement
 
 # for some weird reason, the code only seems to work when you run it twice. WHY?
@@ -14,9 +15,9 @@ with open("train_pair_data.jsonlist", "r") as raw:
 def process_text(input_text):
     return input_text.replace("&gt;", ">")
 
-parsed = markdown.parseString(process_text(data[0]['positive']['comments'][0]['body']))
-# parsed = markdown.parseString(process_text(data[0]['positive']['comments'][0]['body']))
+parsed = markdown.parseString(process_text(
+    data[3]['positive']['comments'][1]['body'])).asList()
 
+pp = pprint.PrettyPrinter(indent=4,width=100,depth=6)
 
-print(parsed)
-# parsed = markdown.parseString(process_text(data[0]['positive']['comments'][0]['body']))
+pp.pprint(parsed)
