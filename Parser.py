@@ -1,5 +1,5 @@
-from pyparsing import (Suppress, SkipTo, Literal, OneOrMore, Word, ParserElement,
-                       StringEnd, printables, Optional, ZeroOrMore)
+from pyparsing import (Suppress, SkipTo, Literal, OneOrMore, Word, ParserElement, StringEnd, printables, Optional,
+                       ZeroOrMore, alphanums, Combine, oneOf, delimitedList, nums, Group)
 
 # Ex: *this* is italic
 
@@ -30,8 +30,6 @@ reg_text = (
     # SkipTo(Literal("*")) | SkipTo(Literal("\n\n"))
 ).setParseAction(lambda t: [["regular", " ".join(t)]])
 
-text = OneOrMore(bold_italic_text | bold_text | italic_text | reg_text)
-
 # Note: can be either two newlines or the end of the string
 
 line_break = Suppress(
@@ -41,6 +39,45 @@ line_break = Suppress(
 )
 
 divider = Suppress(OneOrMore(Literal("_")))
+
+# URL Parser (shamelessly stolen from https://www.accelebrate.com/blog/pyparseltongue-parsing-text-with-pyparsing/):
+
+url_chars = alphanums + '-_.~%+'
+
+fragment = Combine((Suppress('#') + Word(url_chars)))('fragment')
+
+scheme = oneOf('http https ftp file')('scheme')
+host = Combine(delimitedList(Word(url_chars), '.'))('host')
+port = Suppress(':') + Word(nums)('port')
+user_info = (
+    Word(url_chars)('username') +
+    Suppress(':') +
+    Word(url_chars)('password') +
+    Suppress('@')
+)
+
+query_pair = Group(Word(url_chars) + Suppress('=') + Word(url_chars))
+query = Group(Suppress('?') + delimitedList(query_pair, '&'))('query')
+
+path = Combine(
+    Suppress('/') +
+    OneOrMore(~query + Word(url_chars + '/'))
+)('path')
+
+url = (
+    scheme +
+    Suppress('://') +
+    Optional(user_info) +
+    host +
+    Optional(port) +
+    Optional(path) +
+    Optional(query) +
+    Optional(fragment)
+).setParseAction(lambda t: [["URL", "URL"]])
+
+# Back to my own stuff:
+
+text = OneOrMore(url | bold_italic_text | bold_text | italic_text | reg_text)
 
 paragraph = (
     OneOrMore(text) +

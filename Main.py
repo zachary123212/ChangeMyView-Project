@@ -21,20 +21,25 @@ def main():
         data_p = pickle.load(raw)
 
     texts = [thread['op_text_plain'] for thread in data_p]
-    tokens = tokenizer.tokenize(texts[0])
+    bigrams = []
 
-    # tokens_l = []
-    # tokens = [word for word in tokens if word not in nltk.corpus.stopwords.words('english')]
+    for text in texts[:50]:
+        tokens = tokenizer.tokenize(text)
+        tokens = [token.lower() for token in tokens if len(token) > 1]
 
-    # for token in tokens:
-    #     tokens_l.append(lemmatizer.lemmatize(token))
+        # tokens_l = []
+        tokens = [word for word in tokens if word not in nltk.corpus.stopwords.words('english')]
 
-    # tokens = tokens_l
+        # for token in tokens:
+        #     tokens_l.append(lemmatizer.lemmatize(token))
 
-    bigrams = nltk.bigrams(tokens)
+        # tokens = tokens_l
+
+        bigrams += nltk.bigrams(tokens)
+
     freqs = nltk.FreqDist(bigrams)
 
-    print(freqs.most_common(50))
+    pp.pprint(freqs.most_common(50))
 
 if __name__ == "__main__":
     main()
