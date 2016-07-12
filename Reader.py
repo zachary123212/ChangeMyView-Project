@@ -1,13 +1,10 @@
 import json
 import pprint
 from Parser import markdown
+from nltk.tokenize import word_tokenize
 
 # for some weird reason, the code only seems to work when you run it twice. WHY?
 exec(open("Parser.py").read())
-
-# Global Variables:
-
-pp = pprint.PrettyPrinter(indent=4, width=100, depth=6)
 
 
 # Function Definitions:
@@ -31,15 +28,15 @@ def log(logged_text):
         raw.write(b"\n")
 
 
-# Main Procedure:
+# FileRead Procedure:
 
-def main():
+def read(file_path):
     data = []
     data_p = []
 
     open('errors.txt', 'w').close()
 
-    with open("train_pair_data.jsonlist", "r") as raw:
+    with open(file_path, "r") as raw:
         for line in raw.readlines():
             data.append(json.loads(line))
 
@@ -80,6 +77,4 @@ def main():
 
         data_p.append(info)
 
-    pp.pprint(data_p[:10])
-
-main()
+    return data_p
