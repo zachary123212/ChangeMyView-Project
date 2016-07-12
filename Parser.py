@@ -1,5 +1,5 @@
 from pyparsing import (Suppress, SkipTo, Literal, OneOrMore, Word, ParserElement,
-                       alphanums, StringEnd, printables, Optional, ZeroOrMore)
+                       StringEnd, printables, Optional, ZeroOrMore)
 
 # Ex: *this* is italic
 
@@ -30,7 +30,7 @@ reg_text = (
     # SkipTo(Literal("*")) | SkipTo(Literal("\n\n"))
 ).setParseAction(lambda t: [["regular", " ".join(t)]])
 
-text = OneOrMore(bold_italic_text| bold_text | italic_text | reg_text)
+text = OneOrMore(bold_italic_text | bold_text | italic_text | reg_text)
 
 # Note: can be either two newlines or the end of the string
 
@@ -60,8 +60,10 @@ markdown = (
 
 ParserElement.setDefaultWhitespaceChars(' \t')
 
+
 def flatten(l):
     return [item for sublist in l for item in sublist]
+
 
 def getText(parsed_input):
     return " ".join(flatten([[word[1] for word in paragraph[1]] for paragraph in parsed_input]))
