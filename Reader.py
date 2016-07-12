@@ -1,6 +1,6 @@
 import json
 
-from Parser import markdown, getText
+from Parser import markdown, get_text
 
 # for some weird reason, the code only seems to work when you run it twice. WHY?
 exec(open("Parser.py").read())
@@ -46,7 +46,7 @@ def read(file_path):
 
         try:
             info['op_text_structured'] = parse(thread['op_text'].strip())
-            info['op_text_plain'] = getText(info['op_text_structured'])
+            info['op_text_plain'] = get_text(info['op_text_structured'])
         except:
             log(thread['op_text'])
             continue
@@ -61,7 +61,7 @@ def read(file_path):
             # print(comment['body'].encode("utf8"))
             try:
                 info_c['text_structured'] = parse(comment['body'])
-                info_c['text_plain'] = getText(info_c['text_structured'])
+                info_c['text_plain'] = get_text(info_c['text_structured'])
             except:
                 log(comment['body'])
                 continue
@@ -71,7 +71,7 @@ def read(file_path):
             info_c['author'] = comment['author']
             try:
                 info_c['text_structured'] = parse(comment['body'])
-                info_c['text_plain'] = getText(info_c['text_structured'])
+                info_c['text_plain'] = get_text(info_c['text_structured'])
             except:
                 log(comment['body'])
                 continue

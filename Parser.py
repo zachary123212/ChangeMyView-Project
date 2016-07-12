@@ -47,6 +47,8 @@ paragraph = (
     line_break
 ).setParseAction(lambda t: [["non-quote", t.asList()]])
 
+# Ex: > This is a quote
+
 quote = (
     Suppress(Literal(">")) +
     text +
@@ -65,5 +67,5 @@ def flatten(l):
     return [item for sublist in l for item in sublist]
 
 
-def getText(parsed_input):
+def get_text(parsed_input):
     return " ".join(flatten([[word[1] for word in paragraph[1]] for paragraph in parsed_input]))
