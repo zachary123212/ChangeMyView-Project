@@ -20,25 +20,20 @@ def main():
             pickle.dump(read("train_pair_data.jsonlist"), raw)
         data_p = pickle.load(raw)
 
-    texts = [thread['op_text_plain'] for thread in data_p]
-    bigrams = []
+    texts = [[comment['text_plain'] for comment in thread['positive']] for thread in data_p]
+    texts = [t[0] for t in texts if t != []]
 
-    for text in texts[:50]:
+    trigrams = []
+
+    for text in texts:
         tokens = tokenizer.tokenize(text)
         tokens = [token.lower() for token in tokens if len(token) > 1]
 
-        # tokens_l = []
         tokens = [word for word in tokens if word not in nltk.corpus.stopwords.words('english')]
 
-        # for token in tokens:
-        #     tokens_l.append(lemmatizer.lemmatize(token))
+        trigrams += nltk.trigrams(tokens)
 
-        # tokens = tokens_l
-
-        bigrams += nltk.bigrams(tokens)
-
-    freqs = nltk.FreqDist(bigrams)
-
+    freqs = nltk.FreqDist(trigrams)
     pp.pprint(freqs.most_common(50))
 
 if __name__ == "__main__":
