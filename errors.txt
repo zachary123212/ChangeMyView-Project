@@ -1011,10 +1011,6 @@ What do the ratings really say? I think that the informed prefer Fox and the uni
 **EDIT:** Here's what I'm getting out of this. In the words of Mark Twain: If you don't read the news, you are uninformed. If you do read the news, you are misinformed. 
 
 ERROR:
-I do not understand why people believe that these streaming services should be able to put as much strain on ISPs infrastructures without compensating them for doing so. [“When one party’s getting all the benefit and the other’s carrying all the cost, issues will arise, ”](http://www.theaustralian.com.au/business/wall-street-journal/feud-over-netflix-traffic-leads-to-video-slowdown/story-fnay3ubk-1226832287080#) If I was in Verizon's, I would be upset if [one company was using a third of all internet traffic](http://news.cnet.com/8301-1023_3-57546405-93/netflix-gobbles-a-third-of-peak-internet-traffic-in-north-america/) and I wasn't being properly compensated.  When consumers pay for internet services, they usually have data caps, why is it so unreasonable for ISPs to charge businesses in the same manner?
-
-Maybe I am misguided in my thinking so I am open to other people's opinions. CMV
-ERROR:
 I think that your statement is self-defeating. When you say "I believe you should never hold a belief so firm that your mind cannot be changed", this itself would entail an absolute belief that you couldn't change your mind about. Because if you changed your mind, then you would no longer believe that all beliefs should be open to change. So either way, whether you affirm this belief or deny it, you're allowing that (at least) one belief needs to be held so firm that your mind cannot be changed. Its a self-defeating, somewhat similar to this one: "All sentences are false."   
     
 The most you could say is that "I believe you should never hold a belief so firm that your mind cannot be changed, *except for the belief I am articulating right now*".
@@ -1719,16 +1715,6 @@ So, please change my view
      
 P.S.
 I'm not supporting neither GetMo or current use of drone attacks.
-ERROR:
-&gt; [rea·son](http://dictionary.reference.com/browse/reason?s=t)
-&gt; 1. a basis or cause, as for some belief, action, fact, event, etc.: the reason for declaring war.
-&gt; 2. a statement presented in justification or explanation of a belief or action.
-&gt; 3. the mental powers concerned with forming conclusions, judgments, or inferences.
-&gt; 4. sound judgment; good sense.
-
-In definitions one and two if someone's belief in a religion causes them to do or believe in something they are doing it for a religious reason because their religion is the cause and used as justification.  In definition three if they apply their religious system of belief to conclude, judge, or infer something, they are using religious reasoning.  For definition four, if their are no logical inconsistencies between the person holding a view or doing something and their religious system of belief they are using religious reason.   
-
-Faith in god may be a basic assumption of most religions but off of that assumption is a myriad of reasoning.  And the basic assumption doesn't necessarily make it "bad" or illogical reasoning either, as all reasoning processes make basic assumptions.  
 ERROR:
 I've discussed this with my parents in depth, because everyone in my family is wondering whether or not my younger brother will turn out to be gay.  
   

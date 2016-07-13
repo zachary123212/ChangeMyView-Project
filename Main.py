@@ -18,7 +18,9 @@ def main():
     with open("data.pickle", 'r+b') as raw:
         if os.stat("data.pickle").st_size == 0:
             pickle.dump(read("train_pair_data.jsonlist"), raw)
+            print("data serialized")
         data_p = pickle.load(raw)
+        print("data loaded")
 
     texts = [[comment['text_plain'] for comment in thread['positive']] for thread in data_p]
     texts = [t[0] for t in texts if t != []]
