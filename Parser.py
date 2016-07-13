@@ -1,5 +1,45 @@
 from pyparsing import (Suppress, SkipTo, Literal, OneOrMore, Word, ParserElement, StringEnd, printables, Optional,
-                       ZeroOrMore, NotAny)
+                       ZeroOrMore, NotAny, alphanums, Combine, oneOf, delimitedList, nums, Group)
+
+# URL Parser (shamelessly stolen from https://www.accelebrate.com/blog/pyparseltongue-parsing-text-with-pyparsing/):
+
+url_chars = alphanums + '-_.~%+'
+
+fragment = Combine((Suppress('#') + Word(url_chars)))('fragment')
+
+scheme = oneOf('http https ftp file')('scheme')
+host = Combine(delimitedList(Word(url_chars), '.'))('host')
+port = Suppress(':') + Word(nums)('port')
+user_info = (
+    Word(url_chars)('username') +
+    Suppress(':') +
+    Word(url_chars)('password') +
+    Suppress('@')
+)
+
+query_pair = Group(Word(url_chars) + Suppress('=') + Word(url_chars))
+query = Group(Suppress('?') + delimitedList(query_pair, '&'))('query')
+
+path = Combine(
+    Suppress('/') +
+    OneOrMore(~query + Word(url_chars + '/'))
+)('path')
+
+url = (
+    Optional(
+        scheme +
+        Suppress('://') +
+        user_info
+    ) +
+    host +
+    Optional(port) +
+    Optional(path) +
+    Optional(query) +
+    Optional(fragment)
+).setParseAction(lambda t: "URL")
+
+# Back to my own stuff:
+
 
 # Ex: *this* is italic
 
@@ -23,11 +63,13 @@ bold_italic_text = (
     Suppress(Literal("***"))
 ).setParseAction(lambda t: [["bold-italic", t[0]]])
 
-# Ex: this is regular
-
 link_text = (
     Suppress(Literal("[")) +
-    SkipTo(Literal("]")) +
+    (
+        Optional(url) +
+        ZeroOrMore(Word(printables.replace("]", ""))).setParseAction(lambda t: "text")
+        # SkipTo(Literal("]"))
+    ) +
     Suppress(
         Literal("]") +
         Literal("(") +
@@ -35,6 +77,9 @@ link_text = (
         Literal(")")
     )
 ).setParseAction(lambda t: [["link", t[0]]])
+
+
+# Ex: this is regular
 
 reg_text = (
     OneOrMore(
@@ -80,6 +125,15 @@ markdown = (
 )
 
 ParserElement.setDefaultWhitespaceChars(' \t')
+
+
+# For Testing purposes:
+
+# test = """
+# this is the first paragraph and **it** contains [https://www.google.com and stuff](www.google.com) link
+# """
+#
+# print(markdown.parseString(test))
 
 
 def flatten(l):

@@ -1,6 +1,9 @@
+import operator
 import os
 import pickle
 import pprint
+import re
+
 import nltk
 
 from Reader import read
@@ -10,6 +13,10 @@ from Reader import read
 pp = pprint.PrettyPrinter(indent=4, width=100, depth=6)
 lemmatizer = nltk.WordNetLemmatizer()
 tokenizer = nltk.tokenize.RegexpTokenizer(r'\w+')
+
+CONCESSIONS = ["although", "albeit", "fog all", "all the same", "however", "anyway", "even though", "even so",
+               "despite", "in spite of", "nevertheless", "nonetheless", "notwithstanding", "just the same",
+               "regardless", "still", "yet"]
 
 
 # Main Procedure:
@@ -22,21 +29,57 @@ def main():
         data_p = pickle.load(raw)
         print("data loaded")
 
-    texts = [[comment['text_plain'] for comment in thread['positive']] for thread in data_p]
-    texts = [t[0] for t in texts if t != []]
+    texts_p = [[comment['text_plain'] for comment in thread['positive']] for thread in data_p]
+    texts_p = [t[0] for t in texts_p if t != []]
 
-    trigrams = []
+    texts_n = [[comment['text_plain'] for comment in thread['negative']] for thread in data_p]
+    texts_n = [t[0] for t in texts_n if t != []]
 
-    for text in texts:
-        tokens = tokenizer.tokenize(text)
-        tokens = [token.lower() for token in tokens if len(token) > 1]
+    # trigrams = []
 
-        tokens = [word for word in tokens if word not in nltk.corpus.stopwords.words('english')]
+    # for text in texts:
+    #     text = re.sub(r'((http|https)://)?(www(0-9)?.)?\w*\.((\w\w\w)|(\w\w)|(\w\w\.\w\w))', 'URL', text,
+    #                   flags=re.MULTILINE)
 
-        trigrams += nltk.trigrams(tokens)
+    # tokens = tokenizer.tokenize(text)
+    #
+    # tokens = [token.lower() for token in tokens if len(token) > 1]
+    #
+    # tokens = [word for word in tokens if word not in nltk.corpus.stopwords.words('english')]
+    #
+    # trigrams += nltk.trigrams(tokens)
 
-    freqs = nltk.FreqDist(trigrams)
-    pp.pprint(freqs.most_common(50))
+    # freqs = nltk.FreqDist(trigrams)
+    # pp.pprint(freqs.most_common(50))
+
+    concession_frequencies_p = {}
+    word_count_p = 0
+
+    concession_frequencies_n = {}
+    word_count_n = 0
+
+    for text in texts_p:
+        word_count_p += len(tokenizer.tokenize(text))
+    for text in texts_n:
+        word_count_n += len(tokenizer.tokenize(text))
+
+    for concession in CONCESSIONS:
+        concession_frequencies_p[concession] = 0
+        concession_frequencies_n[concession] = 0
+        for text in texts_p:
+            concession_frequencies_p[concession] += text.count(concession)
+        for text in texts_n:
+            concession_frequencies_n[concession] += text.count(concession)
+
+        concession_frequencies_p[concession] /= word_count_p
+        concession_frequencies_n[concession] /= word_count_n
+
+    print("\n\npositive:\n")
+    pp.pprint(sorted(concession_frequencies_p.items(), key=operator.itemgetter(1), reverse=True))
+
+    print("\n\nnegative:\n")
+    pp.pprint(sorted(concession_frequencies_n.items(), key=operator.itemgetter(1), reverse=True))
+
 
 if __name__ == "__main__":
     main()
