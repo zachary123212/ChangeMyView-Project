@@ -77,12 +77,18 @@ def main():
         concession_frequencies_p[concession].append(concession_frequencies_p[concession][0] / word_count_p)
         concession_frequencies_n[concession].append(concession_frequencies_n[concession][0] / word_count_n)
 
-    print("\n\npositive:\n")
-    pp.pprint(sorted(concession_frequencies_p.items(), key=operator.itemgetter(1), reverse=True))
+    with open("data/results.txt", "w") as raw:
+        print("positive:\n")
+        pp.pprint(sorted(concession_frequencies_p.items(), key=operator.itemgetter(1), reverse=True))
 
-    print("\n\nnegative:\n")
-    pp.pprint(sorted(concession_frequencies_n.items(), key=operator.itemgetter(1), reverse=True))
+        raw.write("positive:\n")
+        raw.write(pp.pformat(sorted(concession_frequencies_p.items(), key=operator.itemgetter(1), reverse=True)))
 
+        print("\n\nnegative:\n")
+        pp.pprint(sorted(concession_frequencies_n.items(), key=operator.itemgetter(1), reverse=True))
+
+        raw.write("\n\nnegative:\n")
+        raw.write(pp.pformat(sorted(concession_frequencies_n.items(), key=operator.itemgetter(1), reverse=True)))
 
 if __name__ == "__main__":
     main()
