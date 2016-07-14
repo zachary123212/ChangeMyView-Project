@@ -2,7 +2,6 @@ import operator
 import os
 import pickle
 import pprint
-import re
 
 import nltk
 
@@ -64,15 +63,19 @@ def main():
         word_count_n += len(tokenizer.tokenize(text))
 
     for concession in CONCESSIONS:
-        concession_frequencies_p[concession] = 0
-        concession_frequencies_n[concession] = 0
-        for text in texts_p:
-            concession_frequencies_p[concession] += text.count(concession)
-        for text in texts_n:
-            concession_frequencies_n[concession] += text.count(concession)
+        concession_frequencies_p[concession] = []
+        concession_frequencies_n[concession] = []
 
-        concession_frequencies_p[concession] /= word_count_p
-        concession_frequencies_n[concession] /= word_count_n
+        concession_frequencies_p[concession].append(0)
+        concession_frequencies_n[concession].append(0)
+
+        for text in texts_p:
+            concession_frequencies_p[concession][0] += text.count(concession)
+        for text in texts_n:
+            concession_frequencies_n[concession][0] += text.count(concession)
+
+        concession_frequencies_p[concession].append(concession_frequencies_p[concession][0] / word_count_p)
+        concession_frequencies_n[concession].append(concession_frequencies_n[concession][0] / word_count_n)
 
     print("\n\npositive:\n")
     pp.pprint(sorted(concession_frequencies_p.items(), key=operator.itemgetter(1), reverse=True))

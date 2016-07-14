@@ -78,7 +78,6 @@ link_text = (
     )
 ).setParseAction(lambda t: [["link", t[0]]])
 
-
 # Ex: this is regular
 
 reg_text = (
