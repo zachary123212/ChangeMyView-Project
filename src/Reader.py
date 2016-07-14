@@ -1,9 +1,9 @@
 import json
 
-from Parser import markdown, get_text
+from src.Parser import markdown, get_text
 
 # for some weird reason, the code only seems to work when you run it twice. WHY?
-exec(open("Parser.py").read())
+exec(open("src/Parser.py").read())
 
 
 # Function Definitions:
@@ -21,7 +21,7 @@ def parse(input_text):
 
 
 def log(logged_text):
-    with open("errors.txt", 'ab') as raw:
+    with open("data/errors.txt", 'ab') as raw:
         raw.write(b"ERROR:\n")
         raw.write(logged_text.encode('utf-8'))
         raw.write(b"\n")
@@ -33,7 +33,7 @@ def read(file_path):
     data = []
     data_p = []
 
-    open('errors.txt', 'w').close()
+    open('data/errors.txt', 'w').close()
 
     with open(file_path, "r") as raw:
         for line in raw.readlines():

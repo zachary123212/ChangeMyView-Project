@@ -3,6 +3,7 @@
     <words>
       <w>bigrams</w>
       <w>freqs</w>
+      <w>jsonlist</w>
       <w>lemmatizer</w>
     </words>
   </dictionary>

@@ -5,7 +5,7 @@ import pprint
 
 import nltk
 
-from Reader import read
+from src.Reader import read
 
 # Global Variables:
 
@@ -21,9 +21,9 @@ CONCESSIONS = ["although", "albeit", "fog all", "all the same", "however", "anyw
 # Main Procedure:
 
 def main():
-    with open("data.pickle", 'r+b') as raw:
-        if os.stat("data.pickle").st_size == 0:
-            pickle.dump(read("train_pair_data.jsonlist"), raw)
+    with open("data/data.pickle", 'r+b') as raw:
+        if os.stat("data/data.pickle").st_size == 0:
+            pickle.dump(read("/data/train_pair_data.jsonlist"), raw)
             print("data serialized")
         data_p = pickle.load(raw)
         print("data loaded")
