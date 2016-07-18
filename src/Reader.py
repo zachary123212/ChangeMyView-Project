@@ -42,7 +42,7 @@ def read(file_path):
     for thread in data:
         info = {}
         info['op_author'] = thread['op_author']
-        # print(thread['op_text'])
+        info['op_name'] = thread['op_name']
 
         try:
             info['op_text_structured'] = parse(thread['op_text'].strip())
@@ -51,14 +51,13 @@ def read(file_path):
             log(thread['op_text'])
             continue
 
-        # pp.pprint(info['op_text'])
         info['positive'] = []
         info['negative'] = []
 
         for comment in thread['positive']['comments']:
             info_c = {}
             info_c['author'] = comment['author']
-            # print(comment['body'].encode("utf8"))
+            info_c['id'] = comment['link_id']
             try:
                 info_c['text_structured'] = parse(comment['body'])
                 info_c['text_plain'] = get_text(info_c['text_structured'])
@@ -69,6 +68,7 @@ def read(file_path):
         for comment in thread['negative']['comments']:
             info_c = {}
             info_c['author'] = comment['author']
+            info_c['id'] = comment['link_id']
             try:
                 info_c['text_structured'] = parse(comment['body'])
                 info_c['text_plain'] = get_text(info_c['text_structured'])

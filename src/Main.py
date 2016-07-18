@@ -5,6 +5,7 @@ import pprint
 import csv
 
 import nltk
+import json
 from nltk import RegexpTokenizer
 
 from src.Reader import read
@@ -24,6 +25,16 @@ CONCESSIONS = ["nevertheless", "nonetheless", "non the less", "however", "admitt
 # Main Procedure:
 
 def main():
+    # data = []
+    #
+    # with open("data/train_pair_data.jsonlist", "r") as raw:
+    #     for line in raw.readlines():
+    #         data.append(json.loads(line))
+    #
+    # print(data[0]['op_name'])
+    # print(data[0]['positive']['comments'][0].keys())
+    # return
+
     # Serialized Data Reading/Writing
 
     with open("data/data.pickle", 'r+b') as raw:
@@ -62,6 +73,32 @@ def main():
 
         concession_frequencies_p[concession].append(concession_frequencies_p[concession][0] / len(texts_p))
         concession_frequencies_n[concession].append(concession_frequencies_n[concession][0] / len(texts_n))
+
+    # Write to CSV
+
+    field_names = ['thread_id', 'comment_id', 'context']
+
+    for concession in CONCESSIONS:
+        with open("data/output/" + concession.replace(" ", "_") + "_positive.csv", "w+", encoding="utf-8") as raw:
+            writer = csv.DictWriter(raw, fieldnames=field_names)
+            writer.writeheader()
+
+            for post in data_p:
+                for comment in post['positive']:
+                    for sentence in nltk.sent_tokenize(comment['text_plain']):
+                        if concession in sentence:
+                            writer.writerow(
+                                {'thread_id': post['op_name'], 'comment_id': comment['id'], 'context': sentence})
+        with open("data/output/" + concession.replace(" ", "_") + "_negative.csv", "w+", encoding="utf-8") as raw:
+            writer = csv.DictWriter(raw, fieldnames=field_names)
+            writer.writeheader()
+
+            for post in data_p:
+                for comment in post['negative']:
+                    for sentence in nltk.sent_tokenize(comment['text_plain']):
+                        if concession in sentence:
+                            writer.writerow(
+                                {'thread_id': post['op_name'], 'comment_id': comment['id'], 'context': sentence})
 
     # Print Output
 
