@@ -4,6 +4,7 @@ import pickle
 import pprint
 
 import nltk
+from nltk import RegexpTokenizer
 
 from src.Reader import read
 
@@ -11,10 +12,12 @@ from src.Reader import read
 
 pp = pprint.PrettyPrinter(indent=4, width=100, depth=6)
 lemmatizer = nltk.WordNetLemmatizer()
+tokenizer = RegexpTokenizer(r'\w+')
 
-CONCESSIONS = ["although", "albeit", "fog all", "all the same", "however", "anyway", "even though", "even so",
-               "despite", "in spite of", "nevertheless", "nonetheless", "notwithstanding", "just the same",
-               "regardless", "still", "yet"]
+CONCESSIONS = ["nevertheless", "nonetheless", "non the less", "however", "admittedly", "but", "although", "though",
+               "even though", "even if", "even when", "even so", "whereas", "while", "in spite of", "despite",
+               "notwithstanding", "albeit", "on the one hand", "on the other hand", "acknowledge", "concede", "admit",
+               "admitting that", "grant", "granting that", "the fact remains that"]
 
 
 # Main Procedure:
@@ -40,9 +43,9 @@ def main():
     word_count_n = 0
 
     for text in texts_p:
-        word_count_p += len(text)
+        word_count_p += len(tokenizer.tokenize(text))
     for text in texts_n:
-        word_count_n += len(text)
+        word_count_n += len(tokenizer.tokenize(text))
 
     for concession in CONCESSIONS:
         concession_frequencies_p[concession] = []
@@ -52,12 +55,21 @@ def main():
         concession_frequencies_n[concession].append(0)
 
         for text in texts_p:
-            concession_frequencies_p[concession][0] += text.count(concession)
-        for text in texts_n:
-            concession_frequencies_n[concession][0] += text.count(concession)
+            if concession in text:
+                concession_frequencies_p[concession][0] += 1
 
-        concession_frequencies_p[concession].append(concession_frequencies_p[concession][0] / word_count_p)
-        concession_frequencies_n[concession].append(concession_frequencies_n[concession][0] / word_count_n)
+                # concession_frequencies_p[concession][0] += text.count(concession)
+        for text in texts_n:
+            if concession in text:
+                concession_frequencies_n[concession][0] += 1
+
+                # concession_frequencies_n[concession][0] += text.count(concession)
+
+        concession_frequencies_p[concession].append(concession_frequencies_p[concession][0] / len(texts_p))
+        concession_frequencies_n[concession].append(concession_frequencies_n[concession][0] / len(texts_n))
+
+        # concession_frequencies_p[concession].append(concession_frequencies_p[concession][0] / word_count_p)
+        # concession_frequencies_n[concession].append(concession_frequencies_n[concession][0] / word_count_n)
 
     with open("data/results.txt", "w") as raw:
         print("positive:\n")

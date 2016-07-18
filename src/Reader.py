@@ -1,15 +1,10 @@
 import json
 
-from nltk import RegexpTokenizer
-
 from src.Parser import markdown, get_text
 
 # for some weird reason, the code only seems to work when you run it twice. WHY?
 exec(open("src/Parser.py").read())
 
-# Global Variables:
-
-tokenizer = RegexpTokenizer(r'\w+')
 
 # Function Definitions:
 
@@ -66,7 +61,7 @@ def read(file_path):
             # print(comment['body'].encode("utf8"))
             try:
                 info_c['text_structured'] = parse(comment['body'])
-                info_c['text_plain'] = " ".join(tokenizer.tokenize(get_text(info_c['text_structured'])))
+                info_c['text_plain'] = get_text(info_c['text_structured'])
             except:
                 log(comment['body'])
                 continue
@@ -76,7 +71,7 @@ def read(file_path):
             info_c['author'] = comment['author']
             try:
                 info_c['text_structured'] = parse(comment['body'])
-                info_c['text_plain'] = " ".join(tokenizer.tokenize(get_text(info_c['text_structured'])))
+                info_c['text_plain'] = get_text(info_c['text_structured'])
             except:
                 log(comment['body'])
                 continue
