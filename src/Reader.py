@@ -64,7 +64,7 @@ def read(file_path):
         for comment in thread['positive']['comments']:
             info_c = {}
             info_c['author'] = comment['author']
-            info_c['id'] = comment['link_id']
+            info_c['id'] = comment['id']
             try:
                 info_c['text_structured'] = parse(comment['body'])
                 info_c['text_plain'] = get_text(info_c['text_structured'])
@@ -77,7 +77,7 @@ def read(file_path):
         for comment in thread['negative']['comments']:
             info_c = {}
             info_c['author'] = comment['author']
-            info_c['id'] = comment['link_id']
+            info_c['id'] = comment['id']
             try:
                 info_c['text_structured'] = parse(comment['body'])
                 info_c['text_plain'] = get_text(info_c['text_structured'])

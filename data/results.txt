@@ -20,8 +20,8 @@ positive:
     ('nevertheless', [11, 0.003316249623153452]),
     ('even so', [10, 0.0030147723846849564]),
     ('in spite of', [7, 0.0021103406692794696]),
-    ('admitting that', [3, 0.0009044317154054868]),
     ('notwithstanding', [3, 0.0009044317154054868]),
+    ('admitting that', [3, 0.0009044317154054868]),
     ('the fact remains that', [2, 0.0006029544769369913]),
     ('granting that', [1, 0.00030147723846849563]),
     ('on the one hand', [0, 0.0]),
@@ -51,7 +51,7 @@ negative:
     ('the fact remains that', [3, 0.000907715582450832]),
     ('nevertheless', [3, 0.000907715582450832]),
     ('concede', [2, 0.000605143721633888]),
-    ('on the one hand', [1, 0.000302571860816944]),
     ('notwithstanding', [1, 0.000302571860816944]),
-    ('non the less', [0, 0.0]),
-    ('granting that', [0, 0.0])]
+    ('on the one hand', [1, 0.000302571860816944]),
+    ('granting that', [0, 0.0]),
+    ('non the less', [0, 0.0])]
