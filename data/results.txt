@@ -53,5 +53,5 @@ negative:
     ('concede', [2, 0.000605143721633888]),
     ('on the one hand', [1, 0.000302571860816944]),
     ('notwithstanding', [1, 0.000302571860816944]),
-    ('granting that', [0, 0.0]),
-    ('non the less', [0, 0.0])]
+    ('non the less', [0, 0.0]),
+    ('granting that', [0, 0.0])]
