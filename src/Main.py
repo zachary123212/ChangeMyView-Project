@@ -1,18 +1,17 @@
+import csv
 import operator
 import os
 import pickle
 import pprint
-import csv
 
 import nltk
-import json
 from nltk import RegexpTokenizer
 
 from src.Reader import read
 
 # Global Variables:
 
-pp = pprint.PrettyPrinter(indent=4, width=100, depth=6)
+pp = pprint.PrettyPrinter(indent=4, width=200, depth=6)
 lemmatizer = nltk.WordNetLemmatizer()
 tokenizer = RegexpTokenizer(r'\w+')
 
@@ -85,20 +84,30 @@ def main():
 
             for post in data_p:
                 for comment in post['positive']:
-                    for sentence_p, sentence_t in zip(comment['text_sentences'], comment['text_tokenized']):
-                        if concession in sentence_t:
+                    # pp.pprint(comment['text_sentences'])
+                    for sentence in comment['text_sentences']:
+                        if concession in sentence:
                             writer.writerow(
-                                {'thread_id': post['op_name'], 'comment_id': comment['id'], 'context': sentence_p})
+                                {'thread_id': post['op_name'], 'comment_id': comment['id'], 'context': sentence})
+                        # for sentence_p, sentence_t in zip(comment['text_sentences'], comment['text_tokenized']):
+                        #     if concession in sentence_t:
+                        #         writer.writerow(
+                        #             {'thread_id': post['op_name'], 'comment_id': comment['id'], 'context': sentence_p})
         with open("data/output/" + concession.replace(" ", "_") + "_negative.csv", "w+", encoding="utf-8") as raw:
             writer = csv.DictWriter(raw, fieldnames=field_names)
             writer.writeheader()
 
             for post in data_p:
                 for comment in post['negative']:
-                    for sentence_p, sentence_t in zip(comment['text_sentences'], comment['text_tokenized']):
-                        if concession in sentence_t:
+                    for sentence in comment['text_sentences']:
+                        if concession in sentence:
                             writer.writerow(
-                                {'thread_id': post['op_name'], 'comment_id': comment['id'], 'context': sentence_p})
+                                {'thread_id': post['op_name'], 'comment_id': comment['id'], 'context': sentence})
+
+                        # for sentence_p, sentence_t in zip(comment['text_sentences'], comment['text_tokenized']):
+                        #     if concession in sentence_t:
+                        #         writer.writerow(
+                        #             {'thread_id': post['op_name'], 'comment_id': comment['id'], 'context': sentence_p})
 
     # Print Output
 

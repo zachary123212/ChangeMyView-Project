@@ -140,4 +140,5 @@ def flatten(l):
 
 
 def get_text(parsed_input):
-    return " ".join(flatten([[word[1] for word in paragraph[1]] for paragraph in parsed_input]))
+    return " ".join(
+        flatten([[word[1] for word in pgraph[1]] for pgraph in parsed_input if not pgraph[0] == "quote"]))
