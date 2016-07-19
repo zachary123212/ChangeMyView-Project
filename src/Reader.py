@@ -1,10 +1,15 @@
 import json
 
+from nltk import RegexpTokenizer, sent_tokenize
+
 from src.Parser import markdown, get_text
 
 # for some weird reason, the code only seems to work when you run it twice. WHY?
 exec(open("src/Parser.py").read())
 
+# Global Variables:
+
+tokenizer = RegexpTokenizer(r'\w+')
 
 # Function Definitions:
 
@@ -47,6 +52,8 @@ def read(file_path):
         try:
             info['op_text_structured'] = parse(thread['op_text'].strip())
             info['op_text_plain'] = get_text(info['op_text_structured'])
+            info['op_text_sentences'] = sent_tokenize(info['op_text_plain'])
+            info['op_text_tokenized'] = [tokenizer.tokenize(sentence) for sentence in info['op_text_sentences']]
         except:
             log(thread['op_text'])
             continue
@@ -61,6 +68,8 @@ def read(file_path):
             try:
                 info_c['text_structured'] = parse(comment['body'])
                 info_c['text_plain'] = get_text(info_c['text_structured'])
+                info_c['text_sentences'] = sent_tokenize(info_c['text_plain'])
+                info_c['text_tokenized'] = [tokenizer.tokenize(sentence) for sentence in info_c['text_sentences']]
             except:
                 log(comment['body'])
                 continue
@@ -72,6 +81,8 @@ def read(file_path):
             try:
                 info_c['text_structured'] = parse(comment['body'])
                 info_c['text_plain'] = get_text(info_c['text_structured'])
+                info_c['text_sentences'] = sent_tokenize(info_c['text_plain'])
+                info_c['text_tokenized'] = [tokenizer.tokenize(sentence) for sentence in info_c['text_sentences']]
             except:
                 log(comment['body'])
                 continue
