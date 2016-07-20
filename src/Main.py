@@ -3,6 +3,7 @@ import operator
 import os
 import pickle
 import pprint
+import re
 
 import nltk
 from nltk import RegexpTokenizer
@@ -20,9 +21,10 @@ CONCESSIONS = ["nevertheless", "nonetheless", "non the less", "however", "admitt
                "notwithstanding", "albeit", "on the one hand", "on the other hand", "acknowledge", "concede", "admit",
                "admitting that", "grant", "granting that", "the fact remains that"]
 
+CONCESSIONS_RE = [re.compile("\\b" + concession + "\\b") for concession in CONCESSIONS]
+
 
 # Main Procedure:
-
 def main():
     # data = []
     #
@@ -77,15 +79,16 @@ def main():
 
     field_names = ['thread_id', 'comment_id', 'context']
 
-    for concession in CONCESSIONS:
-        with open("data/output/" + concession.replace(" ", "_") + "_positive.csv", "w+", encoding="utf-8") as raw:
+    for concession_i in range(0, len(CONCESSIONS)):
+        with open("data/output/" + CONCESSIONS[concession_i].replace(" ", "_") + "_positive.csv", "w+",
+                  encoding="utf-8") as raw:
             writer = csv.DictWriter(raw, fieldnames=field_names)
             writer.writeheader()
 
             for post in data_p:
                 for comment in post['positive']:
                     for sentence_i in range(0, len(comment['text_sentences'])):
-                        if concession in comment['text_sentences'][sentence_i]:
+                        if re.search(CONCESSIONS_RE[concession_i], comment['text_sentences'][sentence_i]):
                             displayed_sentences = ""
                             try:
                                 displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
@@ -100,18 +103,15 @@ def main():
                                 {'thread_id': post['op_name'], 'comment_id': comment['id'],
                                  'context': displayed_sentences})
 
-                            # for sentence_p, sentence_t in zip(comment['text_sentences'], comment['text_tokenized']):
-                            #     if concession in sentence_t:
-                            #         writer.writerow(
-                            #             {'thread_id': post['op_name'], 'comment_id': comment['id'], 'context': sentence_p})
-        with open("data/output/" + concession.replace(" ", "_") + "_negative.csv", "w+", encoding="utf-8") as raw:
+        with open("data/output/" + CONCESSIONS[concession_i].replace(" ", "_") + "_negative.csv", "w+",
+                  encoding="utf-8") as raw:
             writer = csv.DictWriter(raw, fieldnames=field_names)
             writer.writeheader()
 
             for post in data_p:
                 for comment in post['negative']:
                     for sentence_i in range(0, len(comment['text_sentences'])):
-                        if concession in comment['text_sentences'][sentence_i]:
+                        if re.search(CONCESSIONS_RE[concession_i], comment['text_sentences'][sentence_i]):
                             displayed_sentences = ""
                             try:
                                 displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
@@ -125,12 +125,6 @@ def main():
                             writer.writerow(
                                 {'thread_id': post['op_name'], 'comment_id': comment['id'],
                                  'context': displayed_sentences})
-
-                           # for sentence_p, sentence_t in zip(comment['text_sentences'], comment['text_tokenized']):
-                            #     if concession in sentence_t:
-                            #         writer.writerow(
-                            #             {'thread_id': post['op_name'], 'comment_id': comment['id'], 'context': sentence_p})
-
     # Print Output
 
     with open("data/results.txt", "w") as raw:
