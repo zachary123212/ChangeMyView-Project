@@ -1,0 +1,23 @@
+label,regex
+nevertheless,\bnevertheless\b
+nonetheless,\bnonetheless\b
+non the less,\bnone the less\b
+however,\bhowever\b
+but,\bbut\b
+although,\balthough\b
+though,\bthough\b
+even though,\beven though\b
+even if,\beven if\b
+even when,\beven when\b
+even so,\beven so\b
+whereas,\bwhereas\b
+while,\bwhile\b
+in spite of,\bin spite of\b
+despite,\bdespite\b
+notwithstanding,\bnotwithstanding\b
+albeit,\balbeir\b
+on the one hand,\bon (?:the)? one hand\b
+on the other hand,\bon the other hand\b
+the fact remains that,\bthe fact remains that\b
+admit,"\b(?:I|I'll)(?:\b\S*\s){0,5}admit\b"
+concede,"\b(?:I|I'll)(?:\b\S*\s){0,5}concede\b"
