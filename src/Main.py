@@ -16,12 +16,18 @@ pp = pprint.PrettyPrinter(indent=4, width=200, depth=6)
 lemmatizer = nltk.WordNetLemmatizer()
 tokenizer = RegexpTokenizer(r'\w+')
 
-CONCESSIONS = ["nevertheless", "nonetheless", "non the less", "however", "admittedly", "but", "although", "though",
+CONCESSIONS = ["nevertheless", "nonetheless", "non the less", "however", "but", "although", "though",
                "even though", "even if", "even when", "even so", "whereas", "while", "in spite of", "despite",
-               "notwithstanding", "albeit", "on the one hand", "on the other hand", "acknowledge", "concede", "admit",
-               "admitting that", "grant", "granting that", "the fact remains that"]
+               "notwithstanding", "albeit", "on the one hand", "on the other hand",
+               "the fact remains that"]
 
 CONCESSIONS_RE = [re.compile("\\b" + concession + "\\b") for concession in CONCESSIONS]
+
+CONCESSIONS.append("admit")
+CONCESSIONS_RE.append(re.compile('\\b(?:I|I\'ll)(?:\\b\\S*\\s){0,5}admit\\b'))
+
+CONCESSIONS.append("concede")
+CONCESSIONS_RE.append(re.compile('\\b(?:I|I\'ll)(?:\\b\\S*\\s){0,5}concede\\b'))
 
 
 # Main Procedure:
@@ -58,22 +64,24 @@ def main():
     concession_frequencies_p = {}
     concession_frequencies_n = {}
 
-    for concession in CONCESSIONS:
-        concession_frequencies_p[concession] = []
-        concession_frequencies_n[concession] = []
+    for concession_i in range(0, len(CONCESSIONS)):
+        concession_frequencies_p[CONCESSIONS[concession_i]] = []
+        concession_frequencies_n[CONCESSIONS[concession_i]] = []
 
-        concession_frequencies_p[concession].append(0)
-        concession_frequencies_n[concession].append(0)
+        concession_frequencies_p[CONCESSIONS[concession_i]].append(0)
+        concession_frequencies_n[CONCESSIONS[concession_i]].append(0)
 
-        for text in texts_p:
-            if concession in text:
-                concession_frequencies_p[concession][0] += 1
-        for text in texts_n:
-            if concession in text:
-                concession_frequencies_n[concession][0] += 1
+        for post in texts_p:
+            if re.search(CONCESSIONS_RE[concession_i], post):
+                concession_frequencies_p[CONCESSIONS[concession_i]][0] += 1
+        for post in texts_n:
+            if re.search(CONCESSIONS_RE[concession_i], post):
+                concession_frequencies_n[CONCESSIONS[concession_i]][0] += 1
 
-        concession_frequencies_p[concession].append(concession_frequencies_p[concession][0] / len(texts_p))
-        concession_frequencies_n[concession].append(concession_frequencies_n[concession][0] / len(texts_n))
+        concession_frequencies_p[CONCESSIONS[concession_i]].append(
+            concession_frequencies_p[CONCESSIONS[concession_i]][0] / len(texts_p))
+        concession_frequencies_n[CONCESSIONS[concession_i]].append(
+            concession_frequencies_n[CONCESSIONS[concession_i]][0] / len(texts_n))
 
     # Write to CSV
 
