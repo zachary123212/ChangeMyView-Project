@@ -16,6 +16,8 @@ pp = pprint.PrettyPrinter(indent=4, width=200, depth=6)
 lemmatizer = nltk.WordNetLemmatizer()
 tokenizer = RegexpTokenizer(r'\w+')
 
+field_names = ['thread_id', 'comment_id', 'context']
+
 CONCESSIONS = ["nevertheless", "nonetheless", "non the less", "however", "but", "although", "though",
                "even though", "even if", "even when", "even so", "whereas", "while", "in spite of", "despite",
                "notwithstanding", "albeit", "on the one hand", "on the other hand",
@@ -29,18 +31,86 @@ CONCESSIONS_RE.append(re.compile('\\b(?:I|I\'ll)(?:\\b\\S*\\s){0,5}admit\\b'))
 CONCESSIONS.append("concede")
 CONCESSIONS_RE.append(re.compile('\\b(?:I|I\'ll)(?:\\b\\S*\\s){0,5}concede\\b'))
 
+# Serialized Data Reading/Writing
+
+with open("data/data.pickle", 'r+b') as raw:
+    if os.stat("data/data.pickle").st_size == 0:
+        pickle.dump(read("data/train_pair_data.jsonlist"), raw)
+        print("data serialized")
+    data_p = pickle.load(raw)
+    print("data loaded")
+
+
+def write_to_csv(concession, concession_re, register):
+    with open("data/output/" + concession.replace(" ", "_") + "_" + register + ".csv", "w+", encoding="utf-8") as raw:
+        writer = csv.DictWriter(raw, fieldnames=field_names)
+        writer.writeheader()
+
+        for post in data_p:
+            for comment in post[register]:
+                for sentence_i in range(0, len(comment['text_sentences'])):
+                    if re.search(concession_re, comment['text_sentences'][sentence_i]):
+                        displayed_sentences = ""
+                        if concession == "but":
+                            if comment['text_tokenized'][sentence_i][0].lower() == "but":
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
+                                except:
+                                    pass
+
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i]
+                                except:
+                                    pass
+                            else:
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i]
+                                except:
+                                    pass
+
+                        # TODO: refactor this
+
+                        elif concession == "however":
+                            if comment['text_tokenized'][sentence_i][0].lower() == "however":
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
+                                except:
+                                    pass
+
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i]
+                                except:
+                                    pass
+                            else:
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i]
+                                except:
+                                    pass
+
+                        elif concession == "while" or concession == "whereas":
+                            try:
+                                displayed_sentences += comment['text_sentences'][sentence_i]
+                            except:
+                                pass
+
+                        else:
+                            try:
+                                displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
+                            except:
+                                pass
+                            displayed_sentences += comment['text_sentences'][sentence_i] + " "
+                            try:
+                                displayed_sentences += comment['text_sentences'][sentence_i + 1]
+                            except:
+                                pass
+
+                        writer.writerow(
+                            {'thread_id': post['op_name'], 'comment_id': comment['id'],
+                             'context': displayed_sentences})
+
 
 # Main Procedure:
 def main():
-    # Serialized Data Reading/Writing
-
-    with open("data/data.pickle", 'r+b') as raw:
-        if os.stat("data/data.pickle").st_size == 0:
-            pickle.dump(read("data/train_pair_data.jsonlist"), raw)
-            print("data serialized")
-        data_p = pickle.load(raw)
-        print("data loaded")
-
     # Text Extraction
 
     texts_p = [[comment['text_plain'] for comment in thread['positive']] for thread in data_p]
@@ -75,110 +145,11 @@ def main():
 
     # Write to CSV
 
-    field_names = ['thread_id', 'comment_id', 'context']
-
     for concession_i in range(0, len(CONCESSIONS)):
-        with open("data/output/" + CONCESSIONS[concession_i].replace(" ", "_") + "_positive.csv", "w+",
-                  encoding="utf-8") as raw:
-            writer = csv.DictWriter(raw, fieldnames=field_names)
-            writer.writeheader()
+        write_to_csv(CONCESSIONS[concession_i], CONCESSIONS_RE[concession_i], "positive")
+        write_to_csv(CONCESSIONS[concession_i], CONCESSIONS_RE[concession_i], "negative")
 
-            for post in data_p:
-                for comment in post['positive']:
-                    for sentence_i in range(0, len(comment['text_sentences'])):
-                        if re.search(CONCESSIONS_RE[concession_i], comment['text_sentences'][sentence_i]):
-                            displayed_sentences = ""
-                            if CONCESSIONS[concession_i] == "but":
-                                # print(type(comment['text_tokenized'][sentence_i][0].lower()))
-                                if comment['text_tokenized'][sentence_i][0].lower() == "but":
-                                    print("there's a sentence beginning with but here")
-                                    try:
-                                        displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
-                                    except:
-                                        pass
-
-                                    try:
-                                        displayed_sentences += comment['text_sentences'][sentence_i]
-                                    except:
-                                        pass
-                                else:
-                                    try:
-                                        displayed_sentences += comment['text_sentences'][sentence_i]
-                                    except:
-                                        pass
-
-                            elif CONCESSIONS[concession_i] == "while" or CONCESSIONS[concession_i] == "whereas":
-                                try:
-                                    displayed_sentences += comment['text_sentences'][sentence_i]
-                                except:
-                                    pass
-
-                            else:
-                                try:
-                                    displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
-                                except:
-                                    pass
-                                displayed_sentences += comment['text_sentences'][sentence_i] + " "
-                                try:
-                                    displayed_sentences += comment['text_sentences'][sentence_i + 1]
-                                except:
-                                    pass
-
-                            writer.writerow(
-                                {'thread_id': post['op_name'], 'comment_id': comment['id'],
-                                 'context': displayed_sentences})
-
-        with open("data/output/" + CONCESSIONS[concession_i].replace(" ", "_") + "_negative.csv", "w+",
-                  encoding="utf-8") as raw:
-            writer = csv.DictWriter(raw, fieldnames=field_names)
-            writer.writeheader()
-
-            for post in data_p:
-                for comment in post['negative']:
-                    for sentence_i in range(0, len(comment['text_sentences'])):
-                        if re.search(CONCESSIONS_RE[concession_i], comment['text_sentences'][sentence_i]):
-                            displayed_sentences = ""
-                            if CONCESSIONS[concession_i] == "but":
-                                if comment['text_tokenized'][sentence_i][0].lower() == "but":
-                                    try:
-                                        displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
-                                    except:
-                                        pass
-
-                                    try:
-                                        displayed_sentences += comment['text_sentences'][sentence_i]
-                                    except:
-                                        pass
-
-                                else:
-                                    try:
-                                        displayed_sentences += comment['text_sentences'][sentence_i]
-                                    except:
-                                        pass
-
-                            elif CONCESSIONS[concession_i] == "while" or CONCESSIONS[concession_i] == "whereas":
-                                try:
-                                    displayed_sentences += comment['text_sentences'][sentence_i]
-                                except:
-                                    pass
-
-                            else:
-                                try:
-                                    displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
-                                except:
-                                    pass
-                                displayed_sentences += comment['text_sentences'][sentence_i] + " "
-                                try:
-                                    displayed_sentences += comment['text_sentences'][sentence_i + 1]
-                                except:
-                                    pass
-
-                            writer.writerow(
-                                {'thread_id': post['op_name'], 'comment_id': comment['id'],
-                                 'context': displayed_sentences})
-
-
-                            # Print Output
+    # Print Output
 
     with open("data/results.txt", "w") as raw:
         print("positive:\n")
