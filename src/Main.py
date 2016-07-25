@@ -32,16 +32,6 @@ CONCESSIONS_RE.append(re.compile('\\b(?:I|I\'ll)(?:\\b\\S*\\s){0,5}concede\\b'))
 
 # Main Procedure:
 def main():
-    # data = []
-    #
-    # with open("data/train_pair_data.jsonlist", "r") as raw:
-    #     for line in raw.readlines():
-    #         data.append(json.loads(line))
-    #
-    # print(data[0]['op_name'])
-    # print(data[0]['positive']['comments'][0].keys())
-    # return
-
     # Serialized Data Reading/Writing
 
     with open("data/data.pickle", 'r+b') as raw:
@@ -98,15 +88,42 @@ def main():
                     for sentence_i in range(0, len(comment['text_sentences'])):
                         if re.search(CONCESSIONS_RE[concession_i], comment['text_sentences'][sentence_i]):
                             displayed_sentences = ""
-                            try:
-                                displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
-                            except:
-                                pass
-                            displayed_sentences += comment['text_sentences'][sentence_i] + " "
-                            try:
-                                displayed_sentences += comment['text_sentences'][sentence_i + 1]
-                            except:
-                                pass
+                            if CONCESSIONS[concession_i] == "but":
+                                # print(type(comment['text_tokenized'][sentence_i][0].lower()))
+                                if comment['text_tokenized'][sentence_i][0].lower() == "but":
+                                    print("there's a sentence beginning with but here")
+                                    try:
+                                        displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
+                                    except:
+                                        pass
+
+                                    try:
+                                        displayed_sentences += comment['text_sentences'][sentence_i]
+                                    except:
+                                        pass
+                                else:
+                                    try:
+                                        displayed_sentences += comment['text_sentences'][sentence_i]
+                                    except:
+                                        pass
+
+                            elif CONCESSIONS[concession_i] == "while" or CONCESSIONS[concession_i] == "whereas":
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i]
+                                except:
+                                    pass
+
+                            else:
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
+                                except:
+                                    pass
+                                displayed_sentences += comment['text_sentences'][sentence_i] + " "
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i + 1]
+                                except:
+                                    pass
+
                             writer.writerow(
                                 {'thread_id': post['op_name'], 'comment_id': comment['id'],
                                  'context': displayed_sentences})
@@ -121,19 +138,47 @@ def main():
                     for sentence_i in range(0, len(comment['text_sentences'])):
                         if re.search(CONCESSIONS_RE[concession_i], comment['text_sentences'][sentence_i]):
                             displayed_sentences = ""
-                            try:
-                                displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
-                            except:
-                                pass
-                            displayed_sentences += comment['text_sentences'][sentence_i] + " "
-                            try:
-                                displayed_sentences += comment['text_sentences'][sentence_i + 1]
-                            except:
-                                pass
+                            if CONCESSIONS[concession_i] == "but":
+                                if comment['text_tokenized'][sentence_i][0].lower() == "but":
+                                    try:
+                                        displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
+                                    except:
+                                        pass
+
+                                    try:
+                                        displayed_sentences += comment['text_sentences'][sentence_i]
+                                    except:
+                                        pass
+
+                                else:
+                                    try:
+                                        displayed_sentences += comment['text_sentences'][sentence_i]
+                                    except:
+                                        pass
+
+                            elif CONCESSIONS[concession_i] == "while" or CONCESSIONS[concession_i] == "whereas":
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i]
+                                except:
+                                    pass
+
+                            else:
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
+                                except:
+                                    pass
+                                displayed_sentences += comment['text_sentences'][sentence_i] + " "
+                                try:
+                                    displayed_sentences += comment['text_sentences'][sentence_i + 1]
+                                except:
+                                    pass
+
                             writer.writerow(
                                 {'thread_id': post['op_name'], 'comment_id': comment['id'],
                                  'context': displayed_sentences})
-    # Print Output
+
+
+                            # Print Output
 
     with open("data/results.txt", "w") as raw:
         print("positive:\n")

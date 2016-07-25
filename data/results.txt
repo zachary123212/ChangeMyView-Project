@@ -19,8 +19,8 @@ positive:
     ('notwithstanding', [3, 0.0009044317154054868]),
     ('the fact remains that', [2, 0.0006029544769369913]),
     ('non the less', [0, 0.0]),
-    ('even so', [0, 0.0]),
-    ('on the one hand', [0, 0.0])]
+    ('on the one hand', [0, 0.0]),
+    ('even so', [0, 0.0])]
 
 negative:
 [   ('but', [1961, 0.5933434190620273]),
@@ -38,10 +38,10 @@ negative:
     ('in spite of', [9, 0.0027231467473524964]),
     ('albeit', [9, 0.0027231467473524964]),
     ('nonetheless', [4, 0.001210287443267776]),
-    ('the fact remains that', [3, 0.000907715582450832]),
     ('nevertheless', [3, 0.000907715582450832]),
+    ('the fact remains that', [3, 0.000907715582450832]),
     ('even so', [2, 0.000605143721633888]),
-    ('concede', [1, 0.000302571860816944]),
-    ('notwithstanding', [1, 0.000302571860816944]),
     ('on the one hand', [1, 0.000302571860816944]),
+    ('notwithstanding', [1, 0.000302571860816944]),
+    ('concede', [1, 0.000302571860816944]),
     ('non the less', [0, 0.0])]
