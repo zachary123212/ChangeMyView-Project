@@ -8,6 +8,7 @@ import re
 import nltk
 from nltk import RegexpTokenizer
 
+from src import Plot
 from src.Reader import read
 
 # Global Variables:
@@ -111,6 +112,7 @@ def write_to_csv(concession, concession_re, register):
 
 # Main Procedure:
 def main():
+
     # Text Extraction
 
     texts_p = [[comment['text_plain'] for comment in thread['positive']] for thread in data_p]
@@ -148,6 +150,12 @@ def main():
     for concession_i in range(0, len(CONCESSIONS)):
         write_to_csv(CONCESSIONS[concession_i], CONCESSIONS_RE[concession_i], "positive")
         write_to_csv(CONCESSIONS[concession_i], CONCESSIONS_RE[concession_i], "negative")
+
+    # Chart Compilation
+
+    for concession in CONCESSIONS:
+        Plot.calc(data_p, concession, "positive")
+        Plot.calc(data_p, concession, "negative")
 
     # Print Output
 
