@@ -2,52 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4607f62f-9b02-4a95-ab0c-a4e2d7f9cbe8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/admit_negative.png" afterPath="$PROJECT_DIR$/data/hist/admit_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/admit_positive.png" afterPath="$PROJECT_DIR$/data/hist/admit_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/albeit_negative.png" afterPath="$PROJECT_DIR$/data/hist/albeit_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/albeit_positive.png" afterPath="$PROJECT_DIR$/data/hist/albeit_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/although_negative.png" afterPath="$PROJECT_DIR$/data/hist/although_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/although_positive.png" afterPath="$PROJECT_DIR$/data/hist/although_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/but_negative.png" afterPath="$PROJECT_DIR$/data/hist/but_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/but_positive.png" afterPath="$PROJECT_DIR$/data/hist/but_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/concede_negative.png" afterPath="$PROJECT_DIR$/data/hist/concede_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/concede_positive.png" afterPath="$PROJECT_DIR$/data/hist/concede_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/despite_negative.png" afterPath="$PROJECT_DIR$/data/hist/despite_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/despite_positive.png" afterPath="$PROJECT_DIR$/data/hist/despite_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/even_if_negative.png" afterPath="$PROJECT_DIR$/data/hist/even_if_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/even_if_positive.png" afterPath="$PROJECT_DIR$/data/hist/even_if_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/even_so_negative.png" afterPath="$PROJECT_DIR$/data/hist/even_so_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/even_so_positive.png" afterPath="$PROJECT_DIR$/data/hist/even_so_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/even_though_negative.png" afterPath="$PROJECT_DIR$/data/hist/even_though_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/even_though_positive.png" afterPath="$PROJECT_DIR$/data/hist/even_though_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/even_when_negative.png" afterPath="$PROJECT_DIR$/data/hist/even_when_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/even_when_positive.png" afterPath="$PROJECT_DIR$/data/hist/even_when_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/however_negative.png" afterPath="$PROJECT_DIR$/data/hist/however_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/however_positive.png" afterPath="$PROJECT_DIR$/data/hist/however_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/in_spite_of_negative.png" afterPath="$PROJECT_DIR$/data/hist/in_spite_of_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/in_spite_of_positive.png" afterPath="$PROJECT_DIR$/data/hist/in_spite_of_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/nevertheless_negative.png" afterPath="$PROJECT_DIR$/data/hist/nevertheless_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/nevertheless_positive.png" afterPath="$PROJECT_DIR$/data/hist/nevertheless_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/non_the_less_negative.png" afterPath="$PROJECT_DIR$/data/hist/non_the_less_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/non_the_less_positive.png" afterPath="$PROJECT_DIR$/data/hist/non_the_less_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/nonetheless_negative.png" afterPath="$PROJECT_DIR$/data/hist/nonetheless_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/nonetheless_positive.png" afterPath="$PROJECT_DIR$/data/hist/nonetheless_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/notwithstanding_negative.png" afterPath="$PROJECT_DIR$/data/hist/notwithstanding_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/notwithstanding_positive.png" afterPath="$PROJECT_DIR$/data/hist/notwithstanding_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/on_the_one_hand_negative.png" afterPath="$PROJECT_DIR$/data/hist/on_the_one_hand_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/on_the_one_hand_positive.png" afterPath="$PROJECT_DIR$/data/hist/on_the_one_hand_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/on_the_other_hand_negative.png" afterPath="$PROJECT_DIR$/data/hist/on_the_other_hand_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/on_the_other_hand_positive.png" afterPath="$PROJECT_DIR$/data/hist/on_the_other_hand_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/the_fact_remains_that_negative.png" afterPath="$PROJECT_DIR$/data/hist/the_fact_remains_that_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/the_fact_remains_that_positive.png" afterPath="$PROJECT_DIR$/data/hist/the_fact_remains_that_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/though_negative.png" afterPath="$PROJECT_DIR$/data/hist/though_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/though_positive.png" afterPath="$PROJECT_DIR$/data/hist/though_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/whereas_negative.png" afterPath="$PROJECT_DIR$/data/hist/whereas_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/whereas_positive.png" afterPath="$PROJECT_DIR$/data/hist/whereas_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/while_negative.png" afterPath="$PROJECT_DIR$/data/hist/while_negative.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/hist/while_positive.png" afterPath="$PROJECT_DIR$/data/hist/while_positive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/results.txt" afterPath="$PROJECT_DIR$/data/results.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Plot.py" afterPath="$PROJECT_DIR$/src/Plot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Csv.py" afterPath="$PROJECT_DIR$/src/Csv.py" />
     </list>
     <ignored path="ChangeMyView-Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,78 +22,143 @@
     <favorites_list name="ChangeMyView-Project" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="despite_negative.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/hist/despite_negative.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="despite_positive.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/hist/despite_positive.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="even_if_negative.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/hist/even_if_negative.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="even_if_positive.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/hist/even_if_positive.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="even_so_negative.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/hist/even_so_negative.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="even_so_positive.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/hist/even_so_positive.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="even_though_negative.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/hist/even_though_negative.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="even_though_positive.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/hist/even_though_positive.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="however_positive.png" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/hist/however_positive.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="however_negative.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/hist/however_negative.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Csv.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Csv.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="22" column="80" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
+                  <folding>
+                    <element signature="e#0#10#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="albeit_negative.csv" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/positions/albeit_negative.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="but_negative.csv" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/positions/but_negative.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-34860">
+                  <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="but_positive.csv" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/positions/but_positive.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17370">
+                  <caret line="1158" column="0" selection-start-line="1158" selection-start-column="0" selection-end-line="1158" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="albeit_positive.csv" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/positions/albeit_positive.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="concede_positive.csv" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/positions/concede_positive.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="even_if_positive.csv" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/positions/even_if_positive.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Main.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="690">
+                  <caret line="155" column="84" selection-start-line="155" selection-start-column="84" selection-end-line="155" selection-end-column="84" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="even_though_positive.csv" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/positions/even_though_positive.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="although_negative.csv" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/positions/although_negative.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1170">
+                  <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="Csv.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Csv.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+                  <folding>
+                    <marker date="1469632790000" expanded="true" signature="0:10" ph="import ..." />
+                    <marker date="1469632790000" expanded="true" signature="162:216" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Plot.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Plot.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -160,16 +180,16 @@
         <option value="$PROJECT_DIR$/data/concessions.csv" />
         <option value="$PROJECT_DIR$/data/output/but_positive.csv" />
         <option value="$PROJECT_DIR$/data/output/on_the_other_hand_positive.csv" />
-        <option value="$PROJECT_DIR$/src/Main.py" />
         <option value="$PROJECT_DIR$/src/Plot.py" />
+        <option value="$PROJECT_DIR$/src/Main.py" />
+        <option value="$PROJECT_DIR$/src/Csv.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="80" />
-    <option name="y" value="90" />
-    <option name="width" value="1760" />
-    <option name="height" value="1030" />
+    <option name="y" value="-1200" />
+    <option name="width" value="1920" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -221,6 +241,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ChangeMyView-Project">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -267,47 +301,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChangeMyView-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChangeMyView-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="ChangeMyView-Project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last.edited.regexp" value="I will never now soon now admit" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -569,16 +572,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="80" y="90" width="1760" height="1030" extended-state="0" />
+    <frame x="0" y="-1200" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10340909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.094791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957503" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28511965" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2844753" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957503" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -608,88 +611,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/output/albeit_negative.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output/admit_negative.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test.py" />
-    <entry file="file://$PROJECT_DIR$/data/data.pickle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="LargeFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-545">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/concessions.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output/notwithstanding_negative.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output/nonetheless_negative.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output/nonetheless_positive.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output/whereas_negative.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output/while_negative.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output/even_if_positive.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/output/but_positive.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45870">
@@ -701,13 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output/but_negative.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58785">
-          <caret line="3919" column="13" selection-start-line="3919" selection-start-column="13" selection-end-line="3919" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -747,16 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="155" column="33" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/hist/nevertheless_positive.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -781,7 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="68" column="65" selection-start-line="68" selection-start-column="65" selection-end-line="68" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,16 +718,6 @@
     <entry file="file://$PROJECT_DIR$/data/hist/non_the_less_positive.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Plot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/hist/admit_negative.png">
@@ -859,11 +751,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/hist/concede_positive.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/hist/despite_negative.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -911,6 +798,135 @@
     <entry file="file://$PROJECT_DIR$/data/hist/however_positive.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/hist/despite_negative.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/admit_positive.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/admit_negative.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/although_positive.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/albeit_negative.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/albeit_positive.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/output/but_negative.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5638">
+          <caret line="3919" column="13" selection-start-line="3919" selection-start-column="13" selection-end-line="3919" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/although_negative.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/but_positive.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17370">
+          <caret line="1158" column="0" selection-start-line="1158" selection-start-column="0" selection-end-line="1158" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/but_negative.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34860">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/even_though_positive.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/concede_positive.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/positions/even_if_positive.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="155" column="84" selection-start-line="155" selection-start-column="84" selection-end-line="155" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="80" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

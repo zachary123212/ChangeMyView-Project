@@ -8,6 +8,7 @@ import re
 import nltk
 from nltk import RegexpTokenizer
 
+from src import Csv
 from src import Plot
 from src.Reader import read
 
@@ -150,6 +151,9 @@ def main():
     for concession_i in range(0, len(CONCESSIONS)):
         write_to_csv(CONCESSIONS[concession_i], CONCESSIONS_RE[concession_i], "positive")
         write_to_csv(CONCESSIONS[concession_i], CONCESSIONS_RE[concession_i], "negative")
+
+        Csv.write_word_comment_position(data_p, CONCESSIONS[concession_i], "positive")
+        Csv.write_word_comment_position(data_p, CONCESSIONS[concession_i], "negative")
 
     # Chart Compilation
 
