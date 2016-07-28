@@ -1,2 +1,2 @@
-sentence_position,sentence_count
-16,15
+sentence_position,sentence_count,paragraph_position,paragraph_count
+16,17,4,5

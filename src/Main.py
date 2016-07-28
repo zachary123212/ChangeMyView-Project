@@ -114,7 +114,9 @@ def write_to_csv(concession, concession_re, register):
 # Main Procedure:
 def main():
 
-    # pp.pprint(data_p[0]['positive'][0]['text_paragraphs'])
+    pp.pprint(data_p[0]['positive'][0]['text_paragraphs'])
+
+    # return
 
     # Text Extraction
 

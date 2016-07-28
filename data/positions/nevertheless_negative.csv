@@ -1,4 +1,4 @@
-sentence_position,sentence_count
-6,5
-12,11
-13,12
+sentence_position,sentence_count,paragraph_position,paragraph_count
+11,7,7,3
+12,14,6,3
+13,33,4,8
