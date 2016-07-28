@@ -11,6 +11,7 @@ exec(open("src/Parser.py").read())
 
 tokenizer = RegexpTokenizer(r'\w+')
 
+
 # Function Definitions:
 
 def process_text(input_text):
@@ -68,6 +69,8 @@ def read(file_path):
             try:
                 info_c['text_structured'] = parse(comment['body'])
                 info_c['text_plain'] = get_text(info_c['text_structured'])
+                # info_c['text_paragraphs'] = [" ".join([block[1] for block in paragraph]) for paragraph in
+                                             # info_c['text_structured']]
                 info_c['text_sentences'] = sent_tokenize(info_c['text_plain'])
                 info_c['text_tokenized'] = [tokenizer.tokenize(sentence) for sentence in info_c['text_sentences']]
                 info_c['text_tagged'] = [pos_tag(sentence) for sentence in info_c['text_tokenized']]
@@ -82,6 +85,8 @@ def read(file_path):
             try:
                 info_c['text_structured'] = parse(comment['body'])
                 info_c['text_plain'] = get_text(info_c['text_structured'])
+                # info_c['text_paragraphs'] = [" ".join([block[1] for block in paragraph]) for paragraph in
+                #                              info_c['text_structured']]
                 info_c['text_sentences'] = sent_tokenize(info_c['text_plain'])
                 info_c['text_tokenized'] = [tokenizer.tokenize(sentence) for sentence in info_c['text_sentences']]
                 info_c['text_tagged'] = [pos_tag(sentence) for sentence in info_c['text_tokenized']]

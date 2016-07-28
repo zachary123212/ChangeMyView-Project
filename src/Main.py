@@ -114,6 +114,8 @@ def write_to_csv(concession, concession_re, register):
 # Main Procedure:
 def main():
 
+    # pp.pprint(data_p[0]['positive'][0]['text_paragraphs'])
+
     # Text Extraction
 
     texts_p = [[comment['text_plain'] for comment in thread['positive']] for thread in data_p]
