@@ -18,10 +18,13 @@ def write_word_comment_position(data_p, input_word, input_re, register):
                     sentence_tokenized = sent_tokenize(comment['text_paragraphs'][paragraph_i])
                     for sentence_i in range(0, len(sentence_tokenized)):
                         if re.search(input_re, sentence_tokenized[sentence_i]):
+                            sent_pos = last_sentence + sentence_i
+                            if sent_pos > sentence_count:
+                                sent_pos = sentence_count
                             writer.writerow(
-                                {'sentence_position': last_sentence + sentence_i,
+                                {'sentence_position': sent_pos,
                                  'sentence_count': sentence_count,
-                                 'paragraph_position': paragraph_i + 1, 'paragraph_count': len(sentence_tokenized)})
+                                 'paragraph_position': paragraph_i + 1, 'paragraph_count': len(comment['text_paragraphs'])})
                     last_sentence += len(sentence_tokenized)
 
                     # for sentence_i in range(0, len(comment['text_sentences'])):

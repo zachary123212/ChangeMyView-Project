@@ -70,7 +70,7 @@ def read(file_path):
                 info_c['text_structured'] = parse(comment['body'])
                 info_c['text_plain'] = get_text(info_c['text_structured'])
                 info_c['text_paragraphs'] = [" ".join([style[1] for style in paragraph[1]]) for paragraph in
-                                             info_c['text_structured']]
+                                             info_c['text_structured'] if paragraph[0] == "non-quote"]
                 info_c['text_sentences'] = sent_tokenize(info_c['text_plain'])
                 info_c['text_tokenized'] = [tokenizer.tokenize(sentence) for sentence in info_c['text_sentences']]
                 info_c['text_tagged'] = [pos_tag(sentence) for sentence in info_c['text_tokenized']]
@@ -86,7 +86,7 @@ def read(file_path):
                 info_c['text_structured'] = parse(comment['body'])
                 info_c['text_plain'] = get_text(info_c['text_structured'])
                 info_c['text_paragraphs'] = [" ".join([style[1] for style in paragraph[1]]) for paragraph in
-                                             info_c['text_structured']]
+                                             info_c['text_structured'] if paragraph[0] == "non-quote"]
                 info_c['text_sentences'] = sent_tokenize(info_c['text_plain'])
                 info_c['text_tokenized'] = [tokenizer.tokenize(sentence) for sentence in info_c['text_sentences']]
                 info_c['text_tagged'] = [pos_tag(sentence) for sentence in info_c['text_tokenized']]
