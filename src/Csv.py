@@ -2,7 +2,7 @@ import csv
 
 from nltk import word_tokenize, re, sent_tokenize
 
-fieldnames = ['sentence_position', "sentence_count", "paragraph_position", "paragraph_count"]
+fieldnames = ['sentence_position', "sentence_count", "paragraph_position", "paragraph_length"]
 
 
 def write_word_comment_position(data_p, input_word, input_re, register):
@@ -24,7 +24,8 @@ def write_word_comment_position(data_p, input_word, input_re, register):
                             writer.writerow(
                                 {'sentence_position': sent_pos,
                                  'sentence_count': sentence_count,
-                                 'paragraph_position': paragraph_i + 1, 'paragraph_count': len(comment['text_paragraphs'])})
+                                 'paragraph_position': sentence_i + 1,
+                                 'paragraph_length': len(sentence_tokenized)})
                     last_sentence += len(sentence_tokenized)
 
                     # for sentence_i in range(0, len(comment['text_sentences'])):

@@ -114,10 +114,6 @@ def write_to_csv(concession, concession_re, register):
 # Main Procedure:
 def main():
 
-    pp.pprint(data_p[0]['positive'][0]['text_paragraphs'])
-
-    # return
-
     # Text Extraction
 
     texts_p = [[comment['text_plain'] for comment in thread['positive']] for thread in data_p]
@@ -168,14 +164,14 @@ def main():
     # Print Output
 
     with open("data/results.txt", "w") as raw:
-        print("positive:\n")
-        pp.pprint(sorted(concession_frequencies_p.items(), key=operator.itemgetter(1), reverse=True))
+        # print("positive:\n")
+        # pp.pprint(sorted(concession_frequencies_p.items(), key=operator.itemgetter(1), reverse=True))
 
         raw.write("positive:\n")
         raw.write(pp.pformat(sorted(concession_frequencies_p.items(), key=operator.itemgetter(1), reverse=True)))
 
-        print("\n\nnegative:\n")
-        pp.pprint(sorted(concession_frequencies_n.items(), key=operator.itemgetter(1), reverse=True))
+        # print("\n\nnegative:\n")
+        # pp.pprint(sorted(concession_frequencies_n.items(), key=operator.itemgetter(1), reverse=True))
 
         raw.write("\n\nnegative:\n")
         raw.write(pp.pformat(sorted(concession_frequencies_n.items(), key=operator.itemgetter(1), reverse=True)))

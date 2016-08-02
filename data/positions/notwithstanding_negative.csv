@@ -1,2 +1,2 @@
-sentence_position,sentence_count,paragraph_position,paragraph_count
-6,8,2,2
+sentence_position,sentence_count,paragraph_position,paragraph_length
+6,8,2,4
