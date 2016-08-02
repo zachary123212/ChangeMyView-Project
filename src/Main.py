@@ -10,6 +10,7 @@ from nltk import RegexpTokenizer
 
 from src import Csv
 from src import Plot
+from src import XMLWriter
 from src.Reader import read
 
 # Global Variables:
@@ -113,6 +114,9 @@ def write_to_csv(concession, concession_re, register):
 
 # Main Procedure:
 def main():
+
+    XMLWriter.dump(data_p)
+    return
 
     # Text Extraction
 
