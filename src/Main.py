@@ -115,8 +115,9 @@ def write_to_csv(concession, concession_re, register):
 # Main Procedure:
 def main():
 
+    # Write to XML
+
     XMLWriter.dump(data_p)
-    return
 
     # Text Extraction
 
