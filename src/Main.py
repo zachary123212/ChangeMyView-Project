@@ -115,10 +115,14 @@ def write_to_csv(concession, concession_re, register):
 # Main Procedure:
 def main():
 
+    # print(len(data_p))
+    # return
+
     # Write to XML
 
     XMLWriter.dump(data_p)
 
+    return
     # Text Extraction
 
     texts_p = [[comment['text_plain'] for comment in thread['positive']] for thread in data_p]

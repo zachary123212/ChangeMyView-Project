@@ -1,4 +1,6 @@
 import xml.etree.cElementTree as et
+import pprint as pp
+from xml.dom import minidom
 
 
 def dump(data_p):
@@ -38,5 +40,7 @@ def dump(data_p):
 
                 # comment.text = comment_d['text_plain']
 
-    tree = et.ElementTree(root)
-    tree.write("data/xml_output.xml")
+    with open("data/xml_output.xml", "w+", encoding="utf8") as raw:
+        xmlstr = minidom.parseString(et.tostring(root)).toprettyxml(indent="\t")
+        raw.write(xmlstr)
+
