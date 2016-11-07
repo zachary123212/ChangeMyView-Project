@@ -74,21 +74,25 @@ def write_to_csv(concession, concession_re, register):
                         # TODO: refactor this
 
                         elif concession == "however":
-                            if comment['text_tokenized'][sentence_i][0].lower() == "however":
-                                try:
-                                    displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
-                                except:
-                                    pass
-
-                                try:
-                                    displayed_sentences += comment['text_sentences'][sentence_i]
-                                except:
-                                    pass
-                            else:
-                                try:
-                                    displayed_sentences += comment['text_sentences'][sentence_i]
-                                except:
-                                    pass
+                            try:
+                                displayed_sentences += " ".join(comment['text_sentences'][:sentence_i + 1])
+                            except:
+                                pass
+                            # if comment['text_tokenized'][sentence_i][0].lower() == "however":
+                            #     try:
+                            #         displayed_sentences += comment['text_sentences'][sentence_i - 1] + " "
+                            #     except:
+                            #         pass
+                            #
+                            #     try:
+                            #         displayed_sentences += comment['text_sentences'][sentence_i]
+                            #     except:
+                            #         pass
+                            # else:
+                            #     try:
+                            #         displayed_sentences += comment['text_sentences'][sentence_i]
+                            #     except:
+                            #         pass
 
                         elif concession == "while" or concession == "whereas":
                             try:
@@ -122,7 +126,7 @@ def main():
 
     XMLWriter.dump(data_p)
 
-    return
+    # return
     # Text Extraction
 
     texts_p = [[comment['text_plain'] for comment in thread['positive']] for thread in data_p]
